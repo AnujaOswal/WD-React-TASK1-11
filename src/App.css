@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  background-color: #ffffff;
+}
+
+html,
+body,
+#root,
+.main {
+  height: 100%;
+}
+
+/* Title Bar and it's components like title, title shadow at the back and price tag icon */
+.nav {
+  height: 10%;
+  width: 100%;
+  box-shadow: 0px 2px 10px 0px rgba(87, 87, 87, 0.747);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.nav h1 {
+  margin: 0;
+  letter-spacing: 2rem;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #007bff;
+  z-index: 2;
+  text-align: center;
+}
+
+.priceTag {
+  font-size: 3rem;
+  color: #007bff;
+}
+
+/* Page co55ntainer below the title bar where the decks are placed */
+.cont {
+  min-height: 90%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  background: linear-gradient(to right, #0062e6, #33aeff);
+}
+
+.container {
+  margin: auto;
+  padding: 20px 0;
+}
+
+.cardDeck {
+  display: flex;
+  justify-content: center;
+}
+
+/* The holder for each deck individually */
+.cardBox {
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+/* Title of each deck and their prices and lists under them */
+.title {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.card-price {
+  font-size: 3rem;
+  display: inline-flex;
+}
+
+.period {
+  font-size: 0.8rem;
+}
+
+.perks {
+  padding: 0 10px;
+}
+
+ul {
+  list-style: none;
+  line-height: 40px;
+}
+
+li {
+  font-size: 1rem;
+}
+
+/* Crossed list items in the deck */
+.uncheck {
+  opacity: 0.5;
+}
+
+/* Font Awesome icon for check and cross marks in each deck */
+.fontAwesome {
+  margin-top: -0.3rem;
+  margin-right: 0.3rem;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 3000px) {
+  /* Container for each deck */
+  .cardBox {
+    margin-bottom: 0;
+  }
+
+  /* Hover effect for each deck and the button opacity while hovering */
+  .cardBox:hover {
+    margin-top: -0.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .cardBox:hover .btnBox {
+    opacity: 1;
+  }
+
+  .btnBox {
+    opacity: 0.7;
+    transition: all 0.2s;
+  }
+
+  /* reflection effect under the deck */
+  .shadow {
+    -webkit-box-reflect: below 1px
+      linear-gradient(
+        transparent,
+        transparent,
+        transparent,
+        rgba(0, 0, 0, 0.596)
+      );
+  }
+}
+
+/* Resizing below classes for a responsive deck and the title of the page */
+@media screen and (max-width: 1200px) {
+  .nav {
+    height: fit-content;
+    padding: 1rem 0;
+  }
+
+  .cardDeck {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cardBox {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .nav {
+    height: fit-content;
+    padding: 1rem 0;
+  }
+
+  .nav h1 {
+    font-size: 2rem;
+    letter-spacing: 1rem;
+  }
+
+  .nav {
+    font-size: 4rem;
+  }
+
+  .priceTag {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  * {
+    font-size: 80%;
+  }
+  .nav {
+    font-size: 3rem;
+  }
+}
